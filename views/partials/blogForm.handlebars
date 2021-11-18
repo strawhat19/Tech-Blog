@@ -1,0 +1,12 @@
+<form id="blog-form">
+  <div class="form-group">
+    <label for="blogTitle">Blog Title</label>
+    <input value="{{title}}" id="blogTitle" name="blog-title" placeholder="Enter Blog Title" type="text" required="required" class="form-control" data-bv-notempty="true" data-bv-notempty-message="The username is required and cannot be empty" />
+  </div>
+  <div class="form-group">
+    <label for="blogContent">Blog Content</label>
+    <textarea id="blogContent" name="blogContent" cols="40" rows="10" required="required" class="form-control">{{content}}</textarea>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
