@@ -6,29 +6,34 @@ const session = require(`express-session`);
 const sequelize = require(`./config/connection`);
 const SequelizeStore = require(`connect-session-sequelize`)(session.Store);
 
-const sess = {
-    secret: `Secret Secret`,
-    cookie: {},
-    resave: false,
-    saveUninitialized: true,
-    store: new SequelizeStore({
-        db: sequelize
-    })
-};
+// const sess = {
+//     secret: `Secret Secret`,
+//     cookie: {},
+//     resave: false,
+//     saveUninitialized: true,
+//     store: new SequelizeStore({
+//         db: sequelize
+//     })
+// };
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.engine(`.hbs`, exphbs({ extname: `.hbs` }));
-app.set(`view engine`, `.hbs`);
+// app.engine(`.hbs`, exphbs({ extname: `.hbs` }));
+// app.set(`view engine`, `.hbs`);
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, `public`)));
 
-app.use(session(sess));
+app.get('/', (req,res) => {
+    res.send(`Hello World`)
+})
 
-app.use(routes);
+// app.use(session(sess));
 
-sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log(`Now listening at Port 3001`));
-});
+// app.use(routes);
+
+// sequelize.sync({ force: false }).then(() => {
+//     app.listen(PORT, () => console.log(`Now listening at http://localhost:${PORT}/`));
+// });
