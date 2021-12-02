@@ -1,0 +1,43 @@
+{{!-- Circuit Animation Styles --}}
+<style>
+#circuitsAnimation, #circuitsAnimation2 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+}
+</style>
+{{!-- Circuit Animation Element --}}
+<div id="circuitsAnimation"></div>
+<div id="circuitsAnimation2"></div>
+
+{{!-- Import Lottie JS for Animation Renderer --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.13/lottie.min.js" integrity="sha512-srGxQe2w7s50+5/nNgEVKYtBm15zRylJwdjxYnGEZr3mmHFJKFjA/ImA2OKizVzoIDX8XISMHDI1+az9pnumbQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+{{!-- Circuit Animation Script to push Animation into DOM & Render --}}
+<script>
+    let circuitAnimation = bodymovin.loadAnimation({
+          container: document.querySelector('#circuitsAnimation'),
+          renderer: 'svg',
+          loop: true,
+          autoplay: true,
+          rendererSettings: {
+            progressiveLoad:true
+        },
+          path: 'https://assets2.lottiefiles.com/packages/lf20_aujfrjaj.json',
+        })
+
+    let circuitAnimation2 = bodymovin.loadAnimation({
+          container: document.querySelector('#circuitsAnimation2'),
+          renderer: 'svg',
+          loop: false,
+          autoplay: true,
+          direction: -1,
+          playDirection: -1,
+          rendererSettings: {
+            progressiveLoad:true
+        },
+          path: 'https://assets2.lottiefiles.com/packages/lf20_aujfrjaj.json',
+        })
+    
+</script>

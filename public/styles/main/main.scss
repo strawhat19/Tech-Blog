@@ -7,9 +7,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;1,200&display=swap');
 
 :root {
-    --main: #de1c1c;
+    --main: #2c2c2c;
+    --secondary: #09d6ae;
+    --accent: #12a6ba;
     --silver: #c5c5c5; // Silver
-    --secondary: black;
     --transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 
@@ -21,5 +22,9 @@
 
 body {
     font-family: 'Montserrat' !important;
-    background: black;
+    // background: var(--silver);
+    background: #606060;
+    color: white;
+    overflow-x: hidden;
+    margin: 0 !important;
 }

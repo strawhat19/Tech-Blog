@@ -14,8 +14,8 @@ nav {
   position: fixed;
   top: 0;
   z-index: 10;
-  border-bottom: 2px solid var(--main);
-  background: var(--main);
+  border-bottom: 2px solid var(--accent);
+  background: black;
 }
 
 nav i {
@@ -143,7 +143,7 @@ nav li {
 .registrationButtons a:hover {
   padding: 15px;
   border-color: var(--main);
-  background: var(--secondary);
+  background: var(--accent);
   -webkit-transition: var(--transition);
   transition: var(--transition);
 }
@@ -201,7 +201,7 @@ nav li {
 }
 
 nav.scrolled {
-  background: var(--secondary);
+  background: var(--accent);
 }
 
 .nav-link a {
@@ -220,14 +220,14 @@ nav.scrolled {
 }
 
 .nav-link:hover {
-  background: var(--secondary);
+  background: var(--accent);
   -webkit-transition: var(--transition);
   transition: var(--transition);
 }
 
 .nav-link:hover a {
-  border-right: 1px solid var(--secondary);
-  border-left: 1px solid var(--secondary);
+  border-right: 1px solid var(--accent);
+  border-left: 1px solid var(--accent);
   -webkit-transition: 0.15s cubic-bezier(0.77, 0.2, 0.05, 1);
   transition: 0.15s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
@@ -237,8 +237,35 @@ ul li.nav-link {
 }
 
 ul li.nav-link:hover {
-  background: rgba(222, 28, 28, 0.6);
+  background: rgba(9, 214, 174, 0.65);
   cursor: pointer;
+}
+
+.desktop-menu-option.open-mobile-menu {
+  width: 100%;
+  opacity: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: -5;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  background: rgba(0, 0, 0, 0.75) !important;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  padding: 0;
+  margin: 0.0189em 0 0 0;
+  -webkit-animation: fadeIn var(--transition);
+          animation: fadeIn var(--transition);
+  border-top: 2px solid var(--accent);
 }
 
 nav .Projects a:hover {
@@ -308,7 +335,7 @@ nav .Projects.active a:hover {
 
 #menuToggle:hover {
   cursor: pointer;
-  background: var(--secondary);
+  background: var(--accent);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -426,32 +453,6 @@ nav .Projects.active a:hover {
   padding: 15px;
   display: block;
   margin: 0;
-}
-
-.desktop-menu-option.open-mobile-menu {
-  width: 100%;
-  opacity: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: -5;
-  -webkit-transition: var(--transition);
-  transition: var(--transition);
-  background: rgba(0, 0, 0, 0.75) !important;
-  -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
-  padding: 0;
-  margin: 0.0189em 0 0 0;
-  -webkit-animation: fadeIn var(--transition);
-          animation: fadeIn var(--transition);
 }
 
 .desktop-menu-option.open-mobile-menu .nav-link {
@@ -653,7 +654,7 @@ nav .Projects.active a:hover {
 .social-links .githubLink:hover {
   padding: 5px 9px 4px 8px !important;
   color: #0d1117 !important;
-  background: var(--secondary);
+  background: var(--accent);
   font-size: 20px;
   -webkit-transition: var(--transition);
   transition: var(--transition);
@@ -690,32 +691,33 @@ nav .Projects.active a:hover {
 }
 
 footer {
-  background: var(--main);
+  background: black;
   color: white;
   font-family: 'Montserrat' !important;
   height: 40px;
   -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding: 0;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   font-weight: 400 !important;
   font-size: 13px;
   grid-gap: 0px;
   z-index: 1;
   position: fixed;
+  left: 0;
   bottom: 0;
   width: 100% !important;
-  border-top: 2px solid white;
+  border-top: 2px solid var(--accent);
 }
 
 footer .innerFooter {
@@ -743,9 +745,10 @@ footer i, .vertical-sep {
 /* Imported Google Fonts */
 /* Noto Sans JP */
 :root {
-  --main: #de1c1c;
+  --main: #2c2c2c;
+  --secondary: #09d6ae;
+  --accent: #12a6ba;
   --silver: #c5c5c5;
-  --secondary: black;
   --transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 
@@ -775,6 +778,9 @@ footer i, .vertical-sep {
 
 body {
   font-family: 'Montserrat' !important;
-  background: black;
+  background: #606060;
+  color: white;
+  overflow-x: hidden;
+  margin: 0 !important;
 }
 /*# sourceMappingURL=main.css.map */

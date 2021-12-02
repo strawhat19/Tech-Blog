@@ -8,8 +8,8 @@ nav {
     position: fixed;
     top: 0;
     z-index: 10;
-    border-bottom: 2px solid var(--main);
-    background: var(--main);
+    border-bottom: 2px solid var(--accent);
+    background: black;
     i {
         color: white !important;
     }
@@ -91,7 +91,7 @@ nav {
         &:hover {
             padding: 15px;
             border-color: var(--main);
-            background: var(--secondary);
+            background: var(--accent);
             transition: var(--transition);
         }
     }
@@ -125,7 +125,7 @@ nav {
 }
 
 nav.scrolled {
-    background: var(--secondary);
+    background: var(--accent);
 }
 
 .nav-link {
@@ -143,11 +143,11 @@ nav.scrolled {
         transition: 0.15s cubic-bezier(0.77,0.2,0.05,1.0);
     }
     &:hover {
-        background: var(--secondary);
+        background: var(--accent);
         transition: var(--transition);
         a {
-            border-right: 1px solid var(--secondary);
-            border-left: 1px solid var(--secondary);
+            border-right: 1px solid var(--accent);
+            border-left: 1px solid var(--accent);
             transition: 0.15s cubic-bezier(0.77,0.2,0.05,1.0);
         }
     }
@@ -156,9 +156,32 @@ nav.scrolled {
 ul li.nav-link {
     border-bottom: 1px solid white;
     &:hover {
-        background: rgba(222, 28, 28, .6);
+        // For Green
+        // background: var(--secondary);
+        background: rgba(9, 214, 174, 0.65);
+        // For Blue
+        // background: rgb(18 166 186 / 55%);
         cursor: pointer;
     }
+}
+
+.desktop-menu-option.open-mobile-menu {
+    width: 100%;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: -5;
+    transition: var(--transition);
+    background: rgba(0, 0, 0, .75) !important;
+    backdrop-filter: blur(3px);
+    padding: 0;
+    margin: 0.0189em 0 0 0;
+    animation: fadeIn var(--transition);
+    border-top: 2px solid var(--accent);
 }
 
 nav .Projects a:hover {
@@ -218,7 +241,7 @@ nav .Projects.active a:hover {
     transition: var(--transition);
     &:hover {
         cursor: pointer;
-        background: var(--secondary);
+        background: var(--accent);
         display: flex;
         border-right: 1px solid white;
         border-left: 1px solid white;
@@ -318,24 +341,6 @@ nav .Projects.active a:hover {
     padding: 15px;
     display: block;
     margin: 0;
-}
-
-.desktop-menu-option.open-mobile-menu {
-    width: 100%;
-    opacity: 1;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: -5;
-    transition: var(--transition);
-    background: rgba(0, 0, 0, .75) !important;
-    backdrop-filter: blur(3px);
-    padding: 0;
-    margin: 0.0189em 0 0 0;
-    animation: fadeIn var(--transition);
 }
 
 .desktop-menu-option.open-mobile-menu .nav-link {
@@ -529,7 +534,7 @@ nav .Projects.active a:hover {
 .social-links .githubLink:hover {
     padding: 5px 9px 4px 8px !important;
     color: #0d1117 !important;
-    background: var(--secondary);
+    background: var(--accent);
     font-size: 20px;
     transition: var(--transition);
 }
