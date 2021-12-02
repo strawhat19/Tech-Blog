@@ -1,0 +1,7 @@
+{
+    "discord.detailsIdling": "Programming",
+    "discord.largeImageIdling": "Coding",
+    "discord.lowerDetailsEditing": "App: {workspace}",
+    "discord.lowerDetailsIdling": "Debugging",
+    "discord.lowerDetailsNoWorkspaceFound": "No App"
+}
